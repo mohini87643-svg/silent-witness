@@ -4,187 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silent Witness | Truth Never Hides</title>
-    <meta name="description"
-        content="Elite private forensic and investigative institution. Precise. Undeniable. Silent.">
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <title>SILENT WITNESS | Forensic Intelligence</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+
     <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">SILENT<span>WITNESS</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#laboratories">Laboratories</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact" class="nav-cta">Apply</a></li>
-            </ul>
-        </div>
+    <nav>
+        <div class="logo">SILENT WITNESS</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Command</a></li>
+            <li><a href="#labs">Laboratories</a></li>
+            <li><a href="#showcase">Evidence</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-overlay"></div>
+    <!-- 1. Cinematic Hero Section -->
+    <section id="hero" class="hero">
         <div class="hero-content">
-            <h1 class="shimmer-text">TRUTH NEVER HIDES.</h1>
-            <h2 class="hero-subtitle">SILENT. PRECISE. UNDENIABLE.</h2>
-            <div class="hero-actions">
-                <button class="btn-primary glow-effect">ENTER THE INVESTIGATION</button>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-            <span>Scroll</span>
+            <h1 class="reveal">
+                WE DON’T <span>GUESS.</span>
+                WE <span class="gold-shimmer">PROVE.</span>
+            </h1>
+            <div class="hero-underline"></div>
+            <a href="#labs" class="btn-primary reveal">ACCESS THE LAB</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="divider gold"></div>
-            <div class="about-grid">
-                <div class="about-text scroll-reveal">
-                    <h3>ELITE INFRASTRUCTURE</h3>
-                    <p class="brand-statement">Silent Witness operates where silence meets science.</p>
-                    <p>We transform microscopic evidence into undeniable truth. Precision is our weapon. Truth is our
-                        verdict.</p>
-                </div>
-            </div>
+    <!-- 2. Authority Statement Section -->
+    <section class="authority-section">
+        <div class="container authority-content">
+            <h2 class="reveal">IN SILENCE, EVIDENCE SPEAKS.</h2>
+            <div class="divider-gold reveal"></div>
+            <p class="reveal">
+                Silent Witness operates with precision, discipline, and elite scientific infrastructure.
+                Every case is handled with calculated accuracy and uncompromising integrity.
+                We decode the unspoken language of the crime scene.
+            </p>
         </div>
     </section>
 
-    <!-- Laboratories Section -->
-    <section id="laboratories">
+    <!-- 3. Elite Laboratory Division Section -->
+    <section id="labs" class="lab-section">
         <div class="container">
-            <h2 class="section-title shimmer-text">WHERE SCIENCE SPEAKS.</h2>
-            <p class="section-desc">Equipped with advanced forensic instruments and elite analytical systems, Silent
-                Witness Laboratories examine every trace with uncompromising precision.</p>
-
+            <div class="section-header reveal">
+                <h2>Laboratory Divisions</h2>
+                <div class="divider-gold"></div>
+            </div>
             <div class="lab-grid">
-                <!-- Card 1 -->
-                <div class="lab-card scroll-reveal">
-                    <div class="card-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1579154212624-b15132d8a961?q=80&w=800&auto=format&fit=crop');">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">🔬</div>
-                        <h4>Forensic Analysis Lab</h4>
-                        <ul>
-                            <li>DNA profiling</li>
-                            <li>Fingerprint examination</li>
-                            <li>Trace evidence analysis</li>
-                        </ul>
-                    </div>
+                <!-- Forensic Intel -->
+                <div class="lab-card reveal">
+                    <h3>🔬 Forensic Intelligence Lab</h3>
+                    <ul>
+                        <li>DNA sequencing</li>
+                        <li>Trace material comparison</li>
+                        <li>Fingerprint authentication</li>
+                    </ul>
                 </div>
-                <!-- Card 2 -->
-                <div class="lab-card scroll-reveal">
-                    <div class="card-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1595079676339-1534802ad6cf?q=80&w=800&auto=format&fit=crop');">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">🔫</div>
-                        <h4>Ballistics & Firearms</h4>
-                        <ul>
-                            <li>Weapon identification</li>
-                            <li>Trajectory reconstruction</li>
-                            <li>Gunshot residue testing</li>
-                        </ul>
-                    </div>
+                <!-- Ballistics -->
+                <div class="lab-card reveal">
+                    <h3>🔫 Ballistics Control Unit</h3>
+                    <ul>
+                        <li>Projectile examination</li>
+                        <li>Weapon matching</li>
+                        <li>Impact trajectory modeling</li>
+                    </ul>
                 </div>
-                <!-- Card 3 -->
-                <div class="lab-card scroll-reveal">
-                    <div class="card-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800&auto=format&fit=crop');">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">⚗️</div>
-                        <h4>Toxicology Lab</h4>
-                        <ul>
-                            <li>Chemical compound analysis</li>
-                            <li>Poison detection</li>
-                            <li>Drug screening</li>
-                        </ul>
-                    </div>
+                <!-- Chemical -->
+                <div class="lab-card reveal">
+                    <h3>🧪 Chemical & Toxicology Center</h3>
+                    <ul>
+                        <li>Substance breakdown</li>
+                        <li>Toxic compound detection</li>
+                        <li>Controlled lab testing</li>
+                    </ul>
                 </div>
-                <!-- Card 4 -->
-                <div class="lab-card scroll-reveal">
-                    <div class="card-bg"
-                        style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop');">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">💻</div>
-                        <h4>Digital Forensics Lab</h4>
-                        <ul>
-                            <li>Data recovery</li>
-                            <li>Cyber investigation</li>
-                            <li>Device forensic imaging</li>
-                        </ul>
-                    </div>
+                <!-- Cyber -->
+                <div class="lab-card reveal">
+                    <h3>💻 Cyber Forensics Command</h3>
+                    <ul>
+                        <li>Encrypted data recovery</li>
+                        <li>Digital footprint tracing</li>
+                        <li>Device memory extraction</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container paralax-container">
-            <div class="services-grid">
-                <div class="service-item scroll-reveal">
-                    <span class="gold-icon">◈</span>
-                    <h5>CRIME SCENE RECONSTRUCTION</h5>
-                </div>
-                <div class="service-item scroll-reveal">
-                    <span class="gold-icon">◈</span>
-                    <h5>PRIVATE INVESTIGATION</h5>
-                </div>
-                <div class="service-item scroll-reveal">
-                    <span class="gold-icon">◈</span>
-                    <h5>EXPERT TESTIMONY</h5>
-                </div>
-                <div class="service-item scroll-reveal">
-                    <span class="gold-icon">◈</span>
-                    <h5>ELITE SECURITY INTELLIGENCE</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="cta">
+    <!-- 4. Interactive Evidence Showcase -->
+    <section id="showcase">
         <div class="container">
-            <div class="cta-content scroll-reveal">
-                <h2 class="aggressive-type">SEEK THE UNSEEN.</h2>
-                <button class="btn-primary pulse-gold">REQUEST INVESTIGATION</button>
+            <div class="section-header reveal">
+                <h2>Evidence Showcase</h2>
+                <div class="divider-gold"></div>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-item reveal">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800&auto=format&fit=crop"
+                        alt="DNA Lab">
+                    <div class="showcase-overlay">VIEW ANALYSIS</div>
+                </div>
+                <div class="showcase-item reveal">
+                    <img src="https://images.unsplash.com/photo-1557821314-4a501f3013c6?q=80&w=800&auto=format&fit=crop"
+                        alt="Microscope">
+                    <div class="showcase-overlay">VIEW ANALYSIS</div>
+                </div>
+                <div class="showcase-item reveal">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop"
+                        alt="Tech Dashboard">
+                    <div class="showcase-overlay">VIEW ANALYSIS</div>
+                </div>
+                <div class="showcase-item reveal">
+                    <img src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?q=80&w=800&auto=format&fit=crop"
+                        alt="Forensic Tools">
+                    <div class="showcase-overlay">VIEW ANALYSIS</div>
+                </div>
+                <div class="showcase-item reveal">
+                    <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=800&auto=format&fit=crop"
+                        alt="Chemical Lab">
+                    <div class="showcase-overlay">VIEW ANALYSIS</div>
+                </div>
+                <div class="showcase-item reveal">
+                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=800&auto=format&fit=crop"
+                        alt="Science Equipment">
+                    <div class="showcase-overlay">VIEW ANALYSIS</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo">SILENT<span>WITNESS</span></a>
-                <p>Elite Forensic Institution</p>
-            </div>
-            <div class="footer-socials">
-                <a href="#" class="social-link">INSTAGRAM</a>
-                <a href="#" class="social-link">LINKEDIN</a>
-                <a href="#" class="social-link">TWITTER</a>
-            </div>
+    <!-- 5. Command Action Section -->
+    <section id="contact" class="action-section">
+        <div class="action-bg-gradient"></div>
+        <div class="container reveal">
+            <h2>INITIATE YOUR INVESTIGATION.</h2>
+            <a href="#" class="btn-primary">REQUEST ANALYSIS</a>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 SILENT WITNESS INSTITUTION. ALL RIGHTS RESERVED.</p>
+    </section>
+
+    <!-- 6. Premium Footer -->
+    <footer>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo">SILENT WITNESS</div>
+                <div style="color: var(--text-muted); font-size: 0.8rem;">
+                    © 2026 SILENT WITNESS CO. | CLASSIFIED INTEL
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 

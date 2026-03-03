@@ -1,122 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    // 1. Scroll Reveal Animations
+    const reveals = document.querySelectorAll('.reveal');
 
-    // Scroll Reveal Animation
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-    const callback = (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+    const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        reveals.forEach(reveal => {
+            const revealTop = reveal.getBoundingClientRect().top;
+
+            if (revealTop < triggerBottom) {
+                reveal.classList.add('active');
             }
         });
     };
 
-    const observer = new IntersectionObserver(callback, {
-        threshold: 0.1
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Initial check
+
+    // 2. Navbar Scroll Effect
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
     });
 
-    revealElements.forEach(el => {
-        observer.observe(el);
+    // 3. Hero Section Animation on Load
+    const hero = document.querySelector('.hero');
+    setTimeout(() => {
+        if (hero) hero.classList.add('active');
+        document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('active'));
+    }, 300);
+
+    // 4. Parallax Effect for Hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        if (hero) {
+            hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        }
     });
 
-    // Smooth scroll for nav links
+    // 5. Smooth Scroll for Nav Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
-    // Hero particle effect (Floating Dust)
-    const initParticles = () => {
-        const canvas = document.createElement('canvas');
-        canvas.id = 'particle-canvas';
-        const hero = document.getElementById('hero');
-        hero.appendChild(canvas);
-        const ctx = canvas.getContext('2d');
+    // 6. Evidence Showcase Modal
+    const showcaseItems = document.querySelectorAll('.showcase-item');
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    const modalImg = document.createElement('img');
+    modal.appendChild(modalImg);
+    document.body.appendChild(modal);
 
-        canvas.style.position = 'absolute';
-        canvas.style.top = '0';
-        canvas.style.left = '0';
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
-        canvas.style.pointerEvents = 'none';
-        canvas.style.zIndex = '0';
+    showcaseItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            modalImg.src = img.src;
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 10);
+        });
+    });
 
-        let particles = [];
-        const particleCount = 60;
-
-        const resize = () => {
-            canvas.width = hero.offsetWidth;
-            canvas.height = hero.offsetHeight;
-        };
-
-        window.addEventListener('resize', resize);
-        resize();
-
-        class Particle {
-            constructor() {
-                this.init();
-            }
-            init() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-                this.opacity = Math.random() * 0.5;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-            draw() {
-                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-
-        const animate = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            requestAnimationFrame(animate);
-        };
-        animate();
-    };
-
-    initParticles();
-
-    // Hero subtle mouse move parallax
-    const hero = document.getElementById('hero');
-    hero.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX / window.innerWidth;
-        const mouseY = e.clientY / window.innerHeight;
-
-        const content = document.querySelector('.hero-content');
-        if (content) {
-            content.style.transform = `translate(${(mouseX - 0.5) * 20}px, ${(mouseY - 0.5) * 20}px)`;
-        }
-        hero.style.backgroundPosition = `${50 + (mouseX * 2)}% ${50 + (mouseY * 2)}%`;
+    modal.addEventListener('click', () => {
+        modal.classList.remove('active');
+        setTimeout(() => modal.style.display = 'none', 600);
     });
 });
